@@ -33,6 +33,7 @@
       'feat.5t': 'Орієнтовні ціни', 'feat.5': 'Називає вилку цін за вашим прайсом. Остаточну суму узгоджуєте ви.',
       'feat.6t': 'Заявки власнику', 'feat.6': 'Кожне звернення потрапляє вам у Telegram та Google Таблицю.',
       'aud.title': 'Підходить будь-якому бізнесу, де клієнти пишуть',
+      'aud.crew': 'Команда ШІ-агентів, яка не втомлюється',
       'demo.title': 'Подивіться, як це виглядає', 'demo.sub': 'Оберіть сферу та подивіться, як бот спілкується з клієнтом.',
       'demo.t1': 'Відповідає за секунди', 'demo.t2': 'Не вигадує зайвого й не ставить діагнози', 'demo.t3': 'Передає людині, коли потрібно',
       'demo.online': 'онлайн',
@@ -109,6 +110,7 @@
       'feat.5t': 'Approximate prices', 'feat.5': 'Quotes a price range from your price list. You agree on the final amount.',
       'feat.6t': 'Leads to the owner', 'feat.6': 'Every inquiry arrives in your Telegram and Google Sheet.',
       'aud.title': 'Fits any business where customers write',
+      'aud.crew': 'A team of AI agents that never gets tired',
       'demo.title': 'See how it looks', 'demo.sub': 'Pick an industry and see how the bot talks to a customer.',
       'demo.t1': 'Replies in seconds', 'demo.t2': 'Does not invent facts or diagnose', 'demo.t3': 'Hands over to a human when needed',
       'demo.online': 'online',
@@ -379,6 +381,48 @@
       mq.addEventListener('mouseleave', () => marqueeTween.timeScale(1));
 
       // how: pinned scrub on desktop, simple reveal otherwise
+      // AI agent mascots: each one runs its own dance loop, paused while off-screen
+      $$('.agent').forEach((el, i) => {
+        const q = gsap.utils.selector(el);
+        const wave = el.classList.contains('agent-peek');
+        const point = el.classList.contains('agent-side');
+        const speed = point ? 1 : .9 + (i % 3) * .12;
+        const o = (x, y) => ({ svgOrigin: x + ' ' + y });
+        const tl = gsap.timeline({ repeat: -1, yoyo: !point, repeatDelay: point ? 1.2 : 0, paused: true, defaults: { duration: .45, ease: 'sine.inOut' } });
+        const anims = [tl];
+        if (point) {
+          // points at the form on the right: raise arm, tap the air, hop twice, lower arm, pause
+          tl.fromTo(q('.arm-r'), { rotation: 0, ...o(95, 84) }, { rotation: -95, ...o(95, 84), duration: .5, ease: 'back.out(1.8)' }, 0)
+            .to(q('.head'), { rotation: 8, ...o(60, 72), duration: .4 }, 0)
+            .to(q('.arm-r'), { rotation: -78, ...o(95, 84), duration: .22, yoyo: true, repeat: 5 }, .6)
+            .to(q('.a-body'), { y: -14, duration: .2, yoyo: true, repeat: 3, ease: 'power1.out' }, .6)
+            .to(q('.arm-r'), { rotation: 0, ...o(95, 84), duration: .5, ease: 'power2.inOut' }, 2.3)
+            .to(q('.head'), { rotation: 0, ...o(60, 72), duration: .4 }, 2.3);
+        } else if (wave) {
+          tl.fromTo(q('.arm-r'), { rotation: -115, ...o(95, 84) }, { rotation: -165, ...o(95, 84), duration: .3 }, 0)
+            .fromTo(q('.head'), { rotation: -4, ...o(60, 72) }, { rotation: 4, ...o(60, 72), duration: .7 }, 0);
+        } else {
+          tl.fromTo(q('.arm-l'), { rotation: 150, ...o(25, 84) }, { rotation: 20, ...o(25, 84) }, 0)
+            .fromTo(q('.arm-r'), { rotation: -20, ...o(95, 84) }, { rotation: -150, ...o(95, 84) }, 0)
+            .fromTo(q('.leg-l'), { rotation: 10, ...o(50, 120) }, { rotation: -10, ...o(50, 120) }, 0)
+            .fromTo(q('.leg-r'), { rotation: -10, ...o(70, 120) }, { rotation: 10, ...o(70, 120) }, 0)
+            .fromTo(q('.head'), { rotation: -6, ...o(60, 72) }, { rotation: 6, ...o(60, 72) }, 0);
+          anims.push(gsap.to(q('.a-body'), { y: -8, duration: .225, repeat: -1, yoyo: true, ease: 'sine.inOut', paused: true }));
+        }
+        anims.push(gsap.timeline({ repeat: -1, repeatDelay: 2.4 + i * .7, paused: true })
+          .to(q('.eye'), { scaleY: .1, transformOrigin: '50% 50%', duration: .08, yoyo: true, repeat: 1 }));
+        anims.forEach(a => a.timeScale(speed));
+        ScrollTrigger.create({
+          trigger: el, start: 'top bottom', end: 'bottom top',
+          onToggle: s => anims.forEach(a => a.paused(!s.isActive))
+        });
+      });
+      gsap.fromTo('.agent-hero', { y: 80, autoAlpha: 0, scale: .8 }, { y: 0, autoAlpha: 1, scale: 1, duration: 1, delay: 1.4, ease: 'back.out(1.6)' });
+      ScrollTrigger.batch('.crew .agent, .agent-peek, .agent-side', {
+        start: 'top 92%', once: true,
+        onEnter: b => gsap.fromTo(b, { y: 50, autoAlpha: 0, scale: .7 }, { y: 0, autoAlpha: 1, scale: 1, stagger: .15, duration: .8, ease: 'back.out(1.6)' })
+      });
+
       // how: plain vertical timeline, no pinning. Line fills as you scroll, steps light up as they enter.
       gsap.to('.steps-fill', {
         scaleY: 1, ease: 'none',
@@ -409,6 +453,8 @@
   /* ---------- boot ---------- */
   function boot() {
     $('#year').textContent = new Date().getFullYear();
+    const agentTpl = $('#agent-tpl');
+    $$('.agent').forEach(el => el.appendChild(agentTpl.content.cloneNode(true)));
     $$('.lang button').forEach(b => b.addEventListener('click', () => applyLang(b.dataset.lang)));
     reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     initFaq();

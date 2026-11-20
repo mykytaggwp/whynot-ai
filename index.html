@@ -44,21 +44,25 @@
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
   <div class="grid-bg"></div>
-  <div class="floats" aria-hidden="true">
-    <div class="float f1" data-depth="30"><i>✅</i><span data-i18n="float.1"></span></div>
-    <div class="float f2" data-depth="55"><i>💬</i><span data-i18n="float.2"></span></div>
-    <div class="float f3" data-depth="20"><i>🔔</i><span data-i18n="float.3"></span></div>
-  </div>
   <div class="wrap hero-inner">
-    <span class="badge" data-anim="hero"><i></i><span data-i18n="hero.badge"></span></span>
-    <h1 data-anim="hero" data-i18n-html="hero.title"></h1>
-    <p class="lead" data-anim="hero" data-i18n="hero.sub"></p>
-    <div class="cta-row" data-anim="hero">
-      <a class="btn" href="#contact" data-i18n="hero.cta"></a>
-      <a class="btn btn-ghost" href="#demo" data-i18n="hero.cta2"></a>
+    <div class="hero-stage" aria-hidden="true">
+      <div class="float f1" data-depth="30"><i>✅</i><span data-i18n="float.1"></span></div>
+      <div class="agent agent-hero a-yellow"></div>
+      <div class="float f2" data-depth="55"><i>💬</i><span data-i18n="float.2"></span></div>
+      <div class="float f3" data-depth="20"><i>🔔</i><span data-i18n="float.3"></span></div>
+    </div>
+    <div class="hero-copy">
+      <span class="badge" data-anim="hero"><i></i><span data-i18n="hero.badge"></span></span>
+      <h1 data-anim="hero" data-i18n-html="hero.title"></h1>
+      <p class="lead" data-anim="hero" data-i18n="hero.sub"></p>
+      <div class="cta-row" data-anim="hero">
+        <a class="btn" href="#contact" data-i18n="hero.cta"></a>
+        <a class="btn btn-ghost" href="#demo" data-i18n="hero.cta2"></a>
+      </div>
     </div>
   </div>
   <div class="scroll-hint" aria-hidden="true"><span></span></div>
+  <div class="swipe-hint" aria-hidden="true"><i></i><span></span></div>
 </section>
 
 <!-- PROBLEM -->
@@ -114,6 +118,12 @@
   <div class="marquee">
     <div class="track" id="track"></div>
   </div>
+  <div class="wrap crew" aria-hidden="true">
+    <div class="agent a-yellow"></div>
+    <div class="agent a-white"></div>
+    <div class="agent a-dark"></div>
+  </div>
+  <p class="wrap crew-cap" data-i18n="aud.crew"></p>
 </section>
 
 <!-- DEMO CHAT -->
@@ -191,8 +201,10 @@
     <div class="contact-text">
       <h2 class="h2 reveal" data-i18n="form.title"></h2>
       <p class="sub reveal" data-i18n="form.sub"></p>
+      <div class="agent agent-side a-white" aria-hidden="true"></div>
     </div>
     <form class="form reveal" id="lead-form" novalidate>
+      <div class="agent agent-peek a-yellow" aria-hidden="true"></div>
       <label><span data-i18n="form.name"></span><input name="name" type="text" autocomplete="name" required></label>
       <label><span data-i18n="form.contact"></span><input name="contact" type="text" autocomplete="off" required data-i18n-ph="form.contact_ph"></label>
       <label><span data-i18n="form.biz"></span>
@@ -223,6 +235,27 @@
     <p class="copy">© <span id="year"></span> whynot.ai</p>
   </div>
 </footer>
+
+<template id="agent-tpl">
+  <svg viewBox="0 0 120 160" focusable="false" aria-hidden="true">
+    <g class="a-body">
+      <rect class="leg leg-l" x="44" y="118" width="12" height="28" rx="6"/>
+      <rect class="leg leg-r" x="64" y="118" width="12" height="28" rx="6"/>
+      <rect class="arm arm-l" x="18" y="80" width="14" height="36" rx="7"/>
+      <rect class="arm arm-r" x="88" y="80" width="14" height="36" rx="7"/>
+      <rect class="torso" x="36" y="74" width="48" height="48" rx="16"/>
+      <circle class="core" cx="60" cy="98" r="7"/>
+      <g class="head">
+        <line class="ant-line" x1="60" y1="22" x2="60" y2="9" stroke-width="3" stroke-linecap="round"/>
+        <circle class="ant" cx="60" cy="6" r="5"/>
+        <path class="w-out" d="M22 16 L42 62 L60 28 L78 62 L98 16"/>
+        <path class="w" d="M22 16 L42 62 L60 28 L78 62 L98 16"/>
+        <circle class="eye" cx="43.5" cy="31" r="4"/>
+        <circle class="eye" cx="76.5" cy="31" r="4"/>
+      </g>
+    </g>
+  </svg>
+</template>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>

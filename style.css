@@ -55,6 +55,14 @@ h1 em,.h2 em{font-style:normal;color:var(--yellow)}
 .scroll-hint span{position:absolute;left:50%;top:7px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:var(--yellow);animation:wheel 1.6s infinite}
 @keyframes wheel{0%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(12px)}}
 
+/* swipe hint: shown instead of the mouse icon on touch devices */
+.swipe-hint{display:none;position:absolute;bottom:26px;left:50%;width:36px;height:72px;transform:translateX(-50%);z-index:2}
+.swipe-hint span{position:absolute;left:50%;bottom:0;width:22px;height:22px;margin-left:-11px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 7px rgba(255,212,0,.22);animation:swipe 2.2s cubic-bezier(.4,0,.2,1) infinite}
+.swipe-hint i{position:absolute;left:50%;top:2px;width:12px;height:12px;margin-left:-6px;border-left:2px solid var(--yellow);border-top:2px solid var(--yellow);transform:rotate(45deg);animation:chev 2.2s ease-in-out infinite}
+@keyframes swipe{0%{transform:translateY(8px) scale(.85);opacity:0}15%{opacity:1;transform:translateY(0) scale(1)}70%{transform:translateY(-40px) scale(1);opacity:1}100%{transform:translateY(-46px) scale(.9);opacity:0}}
+@keyframes chev{0%,25%{opacity:.15}70%{opacity:1}100%{opacity:.15}}
+@media(hover:none) and (pointer:coarse){.scroll-hint{display:none}.swipe-hint{display:block}}
+
 /* sections */
 .section{padding:96px 0}
 .h2{font:700 clamp(28px,4.6vw,52px)/1.12 var(--f-head);letter-spacing:-.03em;max-width:20ch}
@@ -165,13 +173,17 @@ h1 em,.h2 em{font-style:normal;color:var(--yellow)}
 .progress{position:fixed;top:0;left:0;right:0;height:3px;background:var(--yellow);transform:scaleX(0);transform-origin:left;z-index:60;box-shadow:0 0 10px rgba(255,212,0,.7)}
 
 /* floating notifications in hero */
-.floats{position:absolute;inset:0;display:none;pointer-events:none;z-index:1}
-.float{position:absolute;display:flex;align-items:center;gap:12px;background:rgba(22,22,22,.85);backdrop-filter:blur(10px);border:1px solid #333;border-radius:18px;padding:13px 18px;font-size:14px;font-weight:500;box-shadow:0 20px 50px -20px rgba(0,0,0,.8),0 0 0 1px rgba(255,212,0,.06)}
+.hero-stage{display:none;position:relative;height:500px;pointer-events:none}
+.float{white-space:nowrap;position:absolute;display:flex;align-items:center;gap:12px;background:rgba(22,22,22,.85);backdrop-filter:blur(10px);border:1px solid #333;border-radius:18px;padding:13px 18px;font-size:14px;font-weight:500;box-shadow:0 20px 50px -20px rgba(0,0,0,.8),0 0 0 1px rgba(255,212,0,.06)}
 .float i{font-style:normal;display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:rgba(255,212,0,.15)}
-.f1{right:9%;top:27%}
-.f2{right:15%;top:47%}
-.f3{right:5%;top:67%}
-@media(min-width:1200px){.floats{display:block}}
+.f1{left:6px;top:6px}
+.f2{left:34px;top:366px}
+.f3{left:76px;top:436px}
+@media(min-width:1200px){
+  .hero-inner{display:grid;grid-template-columns:360px minmax(0,1fr);gap:48px;align-items:center}
+  .hero-stage{display:block}
+  .hero h1{font-size:clamp(38px,3.6vw,52px);max-width:none}
+}
 .js .float{opacity:0}
 
 /* hover effects */
@@ -184,6 +196,35 @@ h1 em,.h2 em{font-style:normal;color:var(--yellow)}
 .btn::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);transition:left .6s}
 .btn:hover::after{left:130%}
 .btn-ghost::after{display:none}
+
+/* AI agent mascots (original characters, animated with GSAP) */
+.agent{--a:#FFD400;--p:#111;--e:#FFD400;width:96px}
+.agent svg{display:block;width:100%;height:auto;overflow:visible}
+.agent :is(.torso,.skull,.arm,.leg){fill:var(--a)}
+.agent .plate,.agent .core{fill:var(--p)}
+.agent .eye,.agent .ant{fill:var(--e)}
+.agent .ant-line{stroke:var(--a)}
+.agent .w,.agent .w-out{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.agent .w{stroke:var(--a);stroke-width:15}
+.agent .w-out{stroke:transparent;stroke-width:15}
+.a-white{--a:#fff}
+.a-dark{--a:#1b1b1b;--p:#000}
+.a-dark :is(.torso,.skull,.arm,.leg){stroke:#FFD400;stroke-width:2}
+.a-dark .core{fill:#FFD400}
+.a-dark .w{stroke:#1b1b1b;stroke-width:12}
+.a-dark .w-out{stroke:#FFD400;stroke-width:17}
+.a-dark .ant-line{stroke:#FFD400}
+.agent-hero{position:absolute;left:50%;top:86px;width:190px;margin-left:-95px}
+.agent-hero svg{filter:drop-shadow(0 24px 44px rgba(255,212,0,.28))}
+.crew{display:flex;justify-content:center;align-items:flex-end;gap:clamp(24px,6vw,64px);margin-top:56px}
+.crew .agent{width:clamp(74px,18vw,104px)}
+.crew-cap{text-align:center;color:var(--mute);margin-top:18px;font-size:15px}
+.agent-side{display:none;width:170px;margin-top:48px}
+@media(min-width:1024px){.agent-side{display:block}}
+.form{position:relative}
+.agent-peek{position:absolute;right:28px;top:-96px;width:96px;height:96px;overflow:hidden;pointer-events:none}
+@media(max-width:1023px){.form{margin-top:56px}}
+.js .agent{opacity:0}
 
 /* reveal initial state only when JS is on */
 .js .reveal,.js .card,.js .plan,.js .stat{opacity:0}
@@ -211,6 +252,6 @@ h1 em,.h2 em{font-style:normal;color:var(--yellow)}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .badge i,.scroll-hint span,.typing i{animation:none}
-  .js .reveal,.js .card,.js .plan,.js .stat,.js .float,.js [data-anim="hero"]{opacity:1}
+  .badge i,.scroll-hint span,.typing i,.swipe-hint span,.swipe-hint i{animation:none}
+  .js .reveal,.js .card,.js .plan,.js .stat,.js .float,.js .agent,.js [data-anim="hero"]{opacity:1}
 }
