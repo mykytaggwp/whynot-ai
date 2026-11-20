@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>whynot.ai — AI-адміністратор для бізнесу</title>
+<meta name="description" content="whynot.ai — ШІ-адміністратор, який відповідає клієнтам 24/7, записує на послуги та нагадує про повторні візити.">
+<meta property="og:title" content="whynot.ai — AI-адміністратор для бізнесу">
+<meta property="og:description" content="Відповідає клієнтам 24/7, записує, передає заявки власнику.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FFD400'/%3E%3Ctext x='16' y='22' font-size='18' font-weight='800' text-anchor='middle' font-family='Arial'%3Ew%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="logo" href="#top" aria-label="whynot.ai">why<span>not</span>.ai</a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="#how" data-i18n="nav.how"></a>
+    <a href="#features" data-i18n="nav.features"></a>
+    <a href="#pricing" data-i18n="nav.pricing"></a>
+    <a href="#faq" data-i18n="nav.faq"></a>
+  </nav>
+  <div class="nav-right">
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="uk" class="is-active">UA</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+    <a class="btn btn-sm" href="#contact" data-i18n="nav.cta"></a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="grid-bg"></div>
+  <div class="floats" aria-hidden="true">
+    <div class="float f1" data-depth="30"><i>✅</i><span data-i18n="float.1"></span></div>
+    <div class="float f2" data-depth="55"><i>💬</i><span data-i18n="float.2"></span></div>
+    <div class="float f3" data-depth="20"><i>🔔</i><span data-i18n="float.3"></span></div>
+  </div>
+  <div class="wrap hero-inner">
+    <span class="badge" data-anim="hero"><i></i><span data-i18n="hero.badge"></span></span>
+    <h1 data-anim="hero" data-i18n-html="hero.title"></h1>
+    <p class="lead" data-anim="hero" data-i18n="hero.sub"></p>
+    <div class="cta-row" data-anim="hero">
+      <a class="btn" href="#contact" data-i18n="hero.cta"></a>
+      <a class="btn btn-ghost" href="#demo" data-i18n="hero.cta2"></a>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><span></span></div>
+</section>
+
+<!-- PROBLEM -->
+<section class="section" id="problem">
+  <div class="wrap">
+    <h2 class="h2 reveal" data-i18n-html="problem.title"></h2>
+    <p class="sub reveal" data-i18n="problem.sub"></p>
+    <div class="stats">
+      <div class="stat reveal"><b><span class="num" data-to="24" data-suffix="/7">0</span></b><p data-i18n="problem.s1"></p></div>
+      <div class="stat reveal"><b><span class="num" data-to="5" data-pre="&lt;" data-suffix-key="unit.sec">0</span></b><p data-i18n="problem.s2"></p></div>
+      <div class="stat reveal"><b><span class="num" data-to="100" data-suffix="%">0</span></b><p data-i18n="problem.s3"></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="how-head">
+      <h2 class="h2" data-i18n="how.title"></h2>
+      <p class="sub" data-i18n="how.sub"></p>
+    </div>
+    <div class="timeline">
+      <span class="steps-fill" aria-hidden="true"></span>
+      <ol class="steps">
+        <li class="step"><em>1</em><h3 data-i18n="how.s1t"></h3><p data-i18n="how.s1"></p></li>
+        <li class="step"><em>2</em><h3 data-i18n="how.s2t"></h3><p data-i18n="how.s2"></p></li>
+        <li class="step"><em>3</em><h3 data-i18n="how.s3t"></h3><p data-i18n="how.s3"></p></li>
+        <li class="step"><em>4</em><h3 data-i18n="how.s4t"></h3><p data-i18n="how.s4"></p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="wrap">
+    <h2 class="h2 reveal" data-i18n="feat.title"></h2>
+    <div class="cards">
+      <article class="card"><div class="ico">⚡</div><h3 data-i18n="feat.1t"></h3><p data-i18n="feat.1"></p></article>
+      <article class="card"><div class="ico">📅</div><h3 data-i18n="feat.2t"></h3><p data-i18n="feat.2"></p></article>
+      <article class="card"><div class="ico">💬</div><h3 data-i18n="feat.3t"></h3><p data-i18n="feat.3"></p></article>
+      <article class="card"><div class="ico">🔔</div><h3 data-i18n="feat.4t"></h3><p data-i18n="feat.4"></p></article>
+      <article class="card"><div class="ico">💰</div><h3 data-i18n="feat.5t"></h3><p data-i18n="feat.5"></p></article>
+      <article class="card"><div class="ico">🧩</div><h3 data-i18n="feat.6t"></h3><p data-i18n="feat.6"></p></article>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE MARQUEE -->
+<section class="audience" aria-label="Industries">
+  <h2 class="h2 wrap reveal" data-i18n="aud.title"></h2>
+  <div class="marquee">
+    <div class="track" id="track"></div>
+  </div>
+</section>
+
+<!-- DEMO CHAT -->
+<section class="section" id="demo">
+  <div class="wrap demo">
+    <div class="demo-text">
+      <h2 class="h2 reveal" data-i18n="demo.title"></h2>
+      <p class="sub reveal" data-i18n="demo.sub"></p>
+      <ul class="ticks reveal">
+        <li data-i18n="demo.t1"></li>
+        <li data-i18n="demo.t2"></li>
+        <li data-i18n="demo.t3"></li>
+      </ul>
+    </div>
+    <div class="demo-chat reveal">
+      <div class="chat-tabs" role="tablist" aria-label="Industry">
+        <button type="button" role="tab" aria-selected="true" class="is-active" data-topic="beauty" data-i18n="topic.beauty"></button>
+        <button type="button" role="tab" aria-selected="false" data-topic="dental" data-i18n="topic.dental"></button>
+        <button type="button" role="tab" aria-selected="false" data-topic="auto" data-i18n="topic.auto"></button>
+      </div>
+      <div class="phone" aria-label="Chat demo">
+        <div class="phone-top"><div class="av">AI</div><div><b>whynot.ai</b><small data-i18n="demo.online"></small></div></div>
+        <div class="chat" id="chat" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="wrap">
+    <h2 class="h2 reveal" data-i18n="price.title"></h2>
+    <p class="sub reveal" data-i18n="price.sub"></p>
+    <div class="plans">
+      <article class="plan">
+        <h3 data-i18n="price.p1"></h3>
+        <div class="price"><span data-i18n="price.from"></span> <b>$49</b><small data-i18n="price.mo"></small></div>
+        <ul><li data-i18n="price.p1a"></li><li data-i18n="price.p1b"></li><li data-i18n="price.p1c"></li></ul>
+        <a class="btn btn-ghost" href="#contact" data-i18n="price.cta"></a>
+      </article>
+      <article class="plan plan-hot">
+        <span class="tag" data-i18n="price.hot"></span>
+        <h3 data-i18n="price.p2"></h3>
+        <div class="price"><span data-i18n="price.from"></span> <b>$99</b><small data-i18n="price.mo"></small></div>
+        <ul><li data-i18n="price.p2a"></li><li data-i18n="price.p2b"></li><li data-i18n="price.p2c"></li><li data-i18n="price.p2d"></li></ul>
+        <a class="btn" href="#contact" data-i18n="price.cta"></a>
+      </article>
+      <article class="plan">
+        <h3 data-i18n="price.p3"></h3>
+        <div class="price"><b class="custom" data-i18n="price.custom"></b></div>
+        <ul><li data-i18n="price.p3a"></li><li data-i18n="price.p3b"></li><li data-i18n="price.p3c"></li></ul>
+        <a class="btn btn-ghost" href="#contact" data-i18n="price.cta"></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="wrap narrow">
+    <h2 class="h2 reveal" data-i18n="faq.title"></h2>
+    <div class="faq">
+      <div class="qa"><button type="button" aria-expanded="false"><span data-i18n="faq.q1"></span><i></i></button><div class="a"><p data-i18n="faq.a1"></p></div></div>
+      <div class="qa"><button type="button" aria-expanded="false"><span data-i18n="faq.q2"></span><i></i></button><div class="a"><p data-i18n="faq.a2"></p></div></div>
+      <div class="qa"><button type="button" aria-expanded="false"><span data-i18n="faq.q3"></span><i></i></button><div class="a"><p data-i18n="faq.a3"></p></div></div>
+      <div class="qa"><button type="button" aria-expanded="false"><span data-i18n="faq.q4"></span><i></i></button><div class="a"><p data-i18n="faq.a4"></p></div></div>
+      <div class="qa"><button type="button" aria-expanded="false"><span data-i18n="faq.q5"></span><i></i></button><div class="a"><p data-i18n="faq.a5"></p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="wrap contact-inner">
+    <div class="contact-text">
+      <h2 class="h2 reveal" data-i18n="form.title"></h2>
+      <p class="sub reveal" data-i18n="form.sub"></p>
+    </div>
+    <form class="form reveal" id="lead-form" novalidate>
+      <label><span data-i18n="form.name"></span><input name="name" type="text" autocomplete="name" required></label>
+      <label><span data-i18n="form.contact"></span><input name="contact" type="text" autocomplete="off" required data-i18n-ph="form.contact_ph"></label>
+      <label><span data-i18n="form.biz"></span>
+        <select name="biz" required>
+          <option value="" data-i18n="form.biz_ph"></option>
+          <option value="beauty" data-i18n="biz.beauty"></option>
+          <option value="auto" data-i18n="biz.auto"></option>
+          <option value="med" data-i18n="biz.med"></option>
+          <option value="shop" data-i18n="biz.shop"></option>
+          <option value="edu" data-i18n="biz.edu"></option>
+          <option value="other" data-i18n="biz.other"></option>
+        </select>
+      </label>
+      <label><span data-i18n="form.msg"></span><textarea name="msg" rows="3"></textarea></label>
+      <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn btn-block" type="submit" data-i18n="form.send"></button>
+      <p class="form-status" id="form-status" role="status"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap foot">
+    <a class="logo" href="#top">why<span>not</span>.ai</a>
+    <p data-i18n="foot.text"></p>
+    <p class="copy">© <span id="year"></span> whynot.ai</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
