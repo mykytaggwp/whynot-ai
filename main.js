@@ -275,10 +275,9 @@
 
     mm.add({
       motion: '(prefers-reduced-motion: no-preference)',
-      reduced: '(prefers-reduced-motion: reduce)',
-      desktop: '(min-width: 1024px)'
+      reduced: '(prefers-reduced-motion: reduce)'
     }, ctx => {
-      const { motion, desktop } = ctx.conditions;
+      const { motion } = ctx.conditions;
       reduce = !motion;
 
       if (!motion) {
@@ -339,6 +338,7 @@
 
       // how: pinned scrub on desktop, simple reveal otherwise
       // AI agent mascots: each one runs its own dance loop, paused while off-screen
+      const dancers = new Map();
       $$('.agent').forEach((el, i) => {
         const q = gsap.utils.selector(el);
         const wave = el.classList.contains('agent-peek');
@@ -369,11 +369,34 @@
         anims.push(gsap.timeline({ repeat: -1, repeatDelay: 2.4 + i * .7, paused: true })
           .to(q('.eye'), { scaleY: .1, transformOrigin: '50% 50%', duration: .08, yoyo: true, repeat: 1 }));
         anims.forEach(a => a.timeScale(speed));
-        ScrollTrigger.create({
-          trigger: el, start: 'top bottom', end: 'bottom top',
-          onToggle: s => anims.forEach(a => a.paused(!s.isActive))
-        });
+        tl.totalTime(i * .21); // each robot starts at its own phase
+        dancers.set(el, { anims, visible: false, seen: new Map() });
       });
+
+      // Dancing is driven by visibility only. It pauses off-screen and ALWAYS resumes on return.
+      // A watchdog restarts any dancer that is on screen but stalled (hidden tab, layout refresh, anything).
+      const syncDancer = d => d.anims.forEach(a => {
+        const run = d.visible && !document.hidden;
+        if (run && a.paused()) a.resume();
+        else if (!run && !a.paused()) a.pause();
+      });
+      const dancerIO = new IntersectionObserver(es => es.forEach(e => {
+        const d = dancers.get(e.target); if (!d) return;
+        d.visible = e.isIntersecting; syncDancer(d);
+      }), { rootMargin: '120px 0px' });
+      dancers.forEach((d, el) => dancerIO.observe(el));
+      const onVisible = () => dancers.forEach(syncDancer);
+      document.addEventListener('visibilitychange', onVisible);
+      window.addEventListener('pageshow', onVisible);
+      const dancerWatch = setInterval(() => dancers.forEach(d => {
+        if (!d.visible || document.hidden) return;
+        d.anims.forEach(a => {
+          if (a.paused()) a.resume();
+          const t = a.totalTime();
+          if (d.seen.get(a) === t) a.restart();
+          d.seen.set(a, a.totalTime());
+        });
+      }), 2500);
       gsap.from('.agent-hero', { y: 60, autoAlpha: 0, scale: .8, duration: 1, delay: 1.2, ease: 'back.out(1.6)' });
 
       // how: plain vertical timeline, no pinning. Line fills as you scroll, steps light up as they enter.
@@ -389,7 +412,12 @@
         });
       });
 
-      return () => { reduce = false; };
+      return () => {
+        reduce = false;
+        dancerIO.disconnect(); clearInterval(dancerWatch);
+        document.removeEventListener('visibilitychange', onVisible);
+        window.removeEventListener('pageshow', onVisible);
+      };
     });
   }
 
