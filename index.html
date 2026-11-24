@@ -3,10 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>whynot.ai — AI-адміністратор для бізнесу</title>
-<meta name="description" content="whynot.ai — ШІ-адміністратор, який відповідає клієнтам 24/7, записує на послуги та нагадує про повторні візити.">
-<meta property="og:title" content="whynot.ai — AI-адміністратор для бізнесу">
-<meta property="og:description" content="Відповідає клієнтам 24/7, записує, передає заявки власнику.">
+<title>whynot.ai — каталог ШІ-агентів для бізнесу</title>
+<meta name="description" content="whynot.ai підбирає і збирає систему ШІ-агентів під ваш бізнес. Флагман — ШІ-адміністратор: відповідає клієнтам 24/7, записує на послуги, передає заявки.">
+<meta name="page-type" content="software">
+<meta name="site-kind" content="software">
+<meta property="og:title" content="whynot.ai — каталог ШІ-агентів для бізнесу">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:description" content="Підбираємо ШІ-агентів під ваш бізнес. Почніть з одного, додавайте інших.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0a0a0a">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FFD400'/%3E%3Ctext x='16' y='22' font-size='18' font-weight='800' text-anchor='middle' font-family='Arial'%3Ew%3C/text%3E%3C/svg%3E">
@@ -17,13 +21,14 @@
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-
+<a class="skip" href="#top" data-i18n="nav.skip"></a>
 <div class="progress" id="progress" aria-hidden="true"></div>
 
 <header class="nav" id="nav">
   <a class="logo" href="#top" aria-label="whynot.ai">why<span>not</span>.ai</a>
   <nav class="nav-links" aria-label="Main">
     <a href="#how" data-i18n="nav.how"></a>
+    <a href="#agents" data-i18n="nav.agents"></a>
     <a href="#features" data-i18n="nav.features"></a>
     <a href="#pricing" data-i18n="nav.pricing"></a>
     <a href="#faq" data-i18n="nav.faq"></a>
@@ -41,16 +46,10 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="grid-bg"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="grid-bg" aria-hidden="true"></div>
   <div class="wrap hero-inner">
-    <div class="hero-stage" aria-hidden="true">
-      <div class="float f1" data-depth="30"><i>✅</i><span data-i18n="float.1"></span></div>
-      <div class="agent agent-hero a-yellow"></div>
-      <div class="float f2" data-depth="55"><i>💬</i><span data-i18n="float.2"></span></div>
-      <div class="float f3" data-depth="20"><i>🔔</i><span data-i18n="float.3"></span></div>
-    </div>
     <div class="hero-copy">
       <span class="badge" data-anim="hero"><i></i><span data-i18n="hero.badge"></span></span>
       <h1 data-anim="hero" data-i18n-html="hero.title"></h1>
@@ -59,21 +58,55 @@
         <a class="btn" href="#contact" data-i18n="hero.cta"></a>
         <a class="btn btn-ghost" href="#demo" data-i18n="hero.cta2"></a>
       </div>
+      <div class="channels-mini" data-anim="hero">
+        <span data-i18n="hero.works"></span>
+        <img src="assets/icons/telegram.svg" alt="Telegram" width="26" height="26">
+        <img class="ic-ink" src="assets/icons/instagram.svg" alt="Instagram" width="26" height="26">
+        <img src="assets/icons/whatsapp.svg" alt="WhatsApp" width="26" height="26">
+        <img src="assets/icons/viber.svg" alt="Viber" width="26" height="26">
+      </div>
+    </div>
+
+    <div class="hero-stage" data-anim="stage">
+      <div class="agent agent-hero a-yellow" aria-hidden="true"></div>
+      <div class="app-frame" role="img" aria-label="whynot.ai chat">
+        <div class="af-bar">
+          <span class="af-dots"><i></i><i></i><i></i></span>
+          <span class="af-title"><img src="assets/icons/telegram.svg" alt="" width="16" height="16">whynot.ai</span>
+          <span class="af-live"><i></i><span data-i18n="demo.online"></span></span>
+        </div>
+        <div class="af-body" id="hero-chat">
+          <div class="msg user" data-i18n="hc.1"></div>
+          <div class="msg bot" data-i18n="hc.2"></div>
+          <div class="msg user" data-i18n="hc.3"></div>
+          <div class="msg bot booked">
+            <span class="bk-ico" aria-hidden="true"></span>
+            <span><b data-i18n="hc.4t"></b><small data-i18n="hc.4"></small></span>
+          </div>
+        </div>
+      </div>
+      <div class="toast t1" data-depth="26"><img src="assets/icons/telegram.svg" alt="" width="30" height="30"><span><b data-i18n="float.2"></b><small data-i18n="toast.now"></small></span></div>
+      <div class="toast t2" data-depth="48"><img class="ic-tall" src="assets/icons/google-sheets.svg" alt="" width="24" height="30"><span><b data-i18n="float.1"></b><small data-i18n="toast.row"></small></span></div>
     </div>
   </div>
   <div class="scroll-hint" aria-hidden="true"><span></span></div>
   <div class="swipe-hint" aria-hidden="true"><i></i><span></span></div>
 </section>
 
-<!-- PROBLEM -->
-<section class="section" id="problem">
+<!-- PROBLEM: one type moment -->
+<section class="section statement" id="problem">
   <div class="wrap">
-    <h2 class="h2 reveal" data-i18n-html="problem.title"></h2>
-    <p class="sub reveal" data-i18n="problem.sub"></p>
+    <p class="eyebrow" data-i18n="problem.eyebrow"></p>
+    <h2 class="statement-text" id="statement" data-i18n="problem.title"></h2>
     <div class="stats">
-      <div class="stat reveal"><b><span class="num" data-to="24" data-suffix="/7">0</span></b><p data-i18n="problem.s1"></p></div>
-      <div class="stat reveal"><b><span class="num" data-to="5" data-pre="&lt;" data-suffix-key="unit.sec">0</span></b><p data-i18n="problem.s2"></p></div>
-      <div class="stat reveal"><b><span class="num" data-to="100" data-suffix="%">0</span></b><p data-i18n="problem.s3"></p></div>
+      <div class="stat"><b data-i18n="stat.1">24/7</b><p data-i18n="stat.1p">Відповідь кожному зверненню, навіть уночі</p></div>
+      <div class="stat"><b data-i18n="stat.2">&lt;5 сек</b><p data-i18n="stat.2p">на першу відповідь</p></div>
+      <div class="stat"><b data-i18n="stat.3">до 3 каналів</b><p data-i18n="stat.3p">у тарифі «Бізнес»</p></div>
+    </div>
+    <div class="pains">
+      <p><b data-i18n="problem.l1"></b><span data-i18n="problem.s1"></span></p>
+      <p><b data-i18n="problem.l2"></b><span data-i18n="problem.s2"></span></p>
+      <p><b data-i18n="problem.l3"></b><span data-i18n="problem.s3"></span></p>
     </div>
   </div>
 </section>
@@ -82,6 +115,7 @@
 <section class="how" id="how">
   <div class="wrap">
     <div class="how-head">
+      <p class="eyebrow" data-i18n="how.eyebrow"></p>
       <h2 class="h2" data-i18n="how.title"></h2>
       <p class="sub" data-i18n="how.sub"></p>
     </div>
@@ -97,24 +131,120 @@
   </div>
 </section>
 
-<!-- FEATURES -->
+<!-- AGENT CATALOG -->
+<section class="section" id="agents">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="ag.eyebrow"></p>
+    <h2 class="h2" data-i18n="ag.title"></h2>
+    <p class="sub" data-i18n="ag.sub"></p>
+    <div class="agents">
+      <article class="acard a-flag">
+        <span class="flag-badge" data-i18n="ag.flag"></span>
+        <div class="flag-robot agent a-yellow" aria-hidden="true"></div>
+        <div class="flag-text">
+          <h3 data-i18n="ag.0t"></h3><p data-i18n="ag.0"></p>
+          <p class="afor"><b data-i18n="ag.for"></b> <span data-i18n="ag.0f"></span></p>
+          <a class="btn btn-sm" href="#pricing" data-i18n="ag.0cta"></a>
+        </div>
+      </article>
+      <article class="acard a-s">
+        <span class="aico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></span>
+        <h3 data-i18n="ag.1t"></h3><p data-i18n="ag.1"></p>
+        <p class="afor"><b data-i18n="ag.for"></b> <span data-i18n="ag.1f"></span></p>
+      </article>
+      <article class="acard a-s">
+        <span class="aico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></span>
+        <h3 data-i18n="ag.2t"></h3><p data-i18n="ag.2"></p>
+        <p class="afor"><b data-i18n="ag.for"></b> <span data-i18n="ag.2f"></span></p>
+      </article>
+      <article class="acard a-s">
+        <span class="aico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span>
+        <h3 data-i18n="ag.3t"></h3><p data-i18n="ag.3"></p>
+        <p class="afor"><b data-i18n="ag.for"></b> <span data-i18n="ag.3f"></span></p>
+      </article>
+      <article class="acard a-m">
+        <span class="aico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+        <h3 data-i18n="ag.4t"></h3><p data-i18n="ag.4"></p>
+        <p class="afor"><b data-i18n="ag.for"></b> <span data-i18n="ag.4f"></span></p>
+      </article>
+      <article class="acard a-m">
+        <span class="aico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>
+        <h3 data-i18n="ag.5t"></h3><p data-i18n="ag.5"></p>
+        <p class="afor"><b data-i18n="ag.for"></b> <span data-i18n="ag.5f"></span></p>
+      </article>
+      <article class="acard a-wide">
+        <span class="aico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        <div class="wide-text"><h3 data-i18n="ag.6t"></h3></div>
+        <a class="btn" href="#contact" data-i18n="ag.6cta"></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES: bento with live fragments -->
 <section class="section" id="features">
   <div class="wrap">
-    <h2 class="h2 reveal" data-i18n="feat.title"></h2>
-    <div class="cards">
-      <article class="card"><div class="ico">⚡</div><h3 data-i18n="feat.1t"></h3><p data-i18n="feat.1"></p></article>
-      <article class="card"><div class="ico">📅</div><h3 data-i18n="feat.2t"></h3><p data-i18n="feat.2"></p></article>
-      <article class="card"><div class="ico">💬</div><h3 data-i18n="feat.3t"></h3><p data-i18n="feat.3"></p></article>
-      <article class="card"><div class="ico">🔔</div><h3 data-i18n="feat.4t"></h3><p data-i18n="feat.4"></p></article>
-      <article class="card"><div class="ico">💰</div><h3 data-i18n="feat.5t"></h3><p data-i18n="feat.5"></p></article>
-      <article class="card"><div class="ico">🧩</div><h3 data-i18n="feat.6t"></h3><p data-i18n="feat.6"></p></article>
+    <p class="eyebrow" data-i18n="feat.eyebrow"></p>
+    <h2 class="h2" data-i18n="feat.title"></h2>
+    <div class="bento">
+
+      <article class="bcard b-a">
+        <div class="bviz viz-chat" aria-hidden="true">
+          <div class="mini-msg u"><small>02:14</small><span data-i18n="viz.q"></span></div>
+          <div class="mini-msg b"><span data-i18n="viz.a"></span></div>
+        </div>
+        <h3 data-i18n="feat.1t"></h3><p data-i18n="feat.1"></p>
+      </article>
+
+      <article class="bcard b-b">
+        <div class="bviz viz-slots" aria-hidden="true">
+          <span>11:00</span><span class="on">14:30</span><span>17:00</span>
+        </div>
+        <h3 data-i18n="feat.2t"></h3><p data-i18n="feat.2"></p>
+      </article>
+
+      <article class="bcard b-c">
+        <div class="bviz viz-tone" aria-hidden="true">
+          <span class="chip-s on">UA</span><span class="chip-s">EN</span><span class="chip-s" data-i18n="viz.tone"></span>
+        </div>
+        <h3 data-i18n="feat.3t"></h3><p data-i18n="feat.3"></p>
+      </article>
+
+      <article class="bcard b-d">
+        <div class="bviz viz-remind" aria-hidden="true">
+          <span class="bell"></span>
+          <span class="rem-t"><b data-i18n="viz.rem"></b><small data-i18n="viz.rem2"></small></span>
+        </div>
+        <h3 data-i18n="feat.4t"></h3><p data-i18n="feat.4"></p>
+      </article>
+
+      <article class="bcard b-e">
+        <div class="bviz viz-price" aria-hidden="true">
+          <div class="range"><i></i></div>
+          <div class="range-l"><span>600</span><b>600–800 ₴</b><span>1200</span></div>
+        </div>
+        <h3 data-i18n="feat.5t"></h3><p data-i18n="feat.5"></p>
+      </article>
+
+      <article class="bcard b-f">
+        <div class="bviz viz-hub" aria-hidden="true">
+          <div class="hub-node hub-bot"><div class="agent a-yellow"></div></div>
+          <svg class="hub-lines" viewBox="0 0 200 100" preserveAspectRatio="none"><path d="M0 50 C70 50 70 20 200 20"/><path d="M0 50 C70 50 70 80 200 80"/><circle class="pulse" r="3"><animateMotion dur="2.6s" repeatCount="indefinite" path="M0 50 C70 50 70 20 200 20"/></circle><circle class="pulse" r="3"><animateMotion dur="2.6s" begin="1.3s" repeatCount="indefinite" path="M0 50 C70 50 70 80 200 80"/></circle></svg>
+          <div class="hub-targets">
+            <span><img src="assets/icons/telegram.svg" alt="Telegram" width="34" height="34">Telegram</span>
+            <span><img class="ic-tall" src="assets/icons/google-sheets.svg" alt="Google Sheets" width="27" height="34">Google Sheets</span>
+          </div>
+        </div>
+        <div class="b-f-text"><h3 data-i18n="feat.6t"></h3><p data-i18n="feat.6"></p></div>
+      </article>
+
     </div>
   </div>
 </section>
 
 <!-- AUDIENCE MARQUEE -->
 <section class="audience" aria-label="Industries">
-  <h2 class="h2 wrap reveal" data-i18n="aud.title"></h2>
+  <h2 class="h2 wrap" data-i18n="aud.title"></h2>
   <div class="marquee">
     <div class="track" id="track"></div>
   </div>
@@ -123,22 +253,22 @@
     <div class="agent a-white"></div>
     <div class="agent a-dark"></div>
   </div>
-  <p class="wrap crew-cap" data-i18n="aud.crew"></p>
 </section>
 
 <!-- DEMO CHAT -->
 <section class="section" id="demo">
   <div class="wrap demo">
     <div class="demo-text">
-      <h2 class="h2 reveal" data-i18n="demo.title"></h2>
-      <p class="sub reveal" data-i18n="demo.sub"></p>
-      <ul class="ticks reveal">
+      <p class="eyebrow" data-i18n="demo.eyebrow"></p>
+      <h2 class="h2" data-i18n="demo.title"></h2>
+      <p class="sub" data-i18n="demo.sub"></p>
+      <ul class="ticks">
         <li data-i18n="demo.t1"></li>
         <li data-i18n="demo.t2"></li>
         <li data-i18n="demo.t3"></li>
       </ul>
     </div>
-    <div class="demo-chat reveal">
+    <div class="demo-chat">
       <div class="chat-tabs" role="tablist" aria-label="Industry">
         <button type="button" role="tab" aria-selected="true" class="is-active" data-topic="beauty" data-i18n="topic.beauty"></button>
         <button type="button" role="tab" aria-selected="false" data-topic="dental" data-i18n="topic.dental"></button>
@@ -155,8 +285,10 @@
 <!-- PRICING -->
 <section class="section" id="pricing">
   <div class="wrap">
-    <h2 class="h2 reveal" data-i18n="price.title"></h2>
-    <p class="sub reveal" data-i18n="price.sub"></p>
+    <p class="eyebrow" data-i18n="price.eyebrow"></p>
+    <h2 class="h2" data-i18n="price.title"></h2>
+    <p class="sub" data-i18n="price.sub"></p>
+    <p class="price-for" data-i18n="price.for"></p>
     <div class="plans">
       <article class="plan">
         <h3 data-i18n="price.p1"></h3>
@@ -183,10 +315,13 @@
 
 <!-- FAQ -->
 <section class="section" id="faq">
-  <div class="wrap narrow">
-    <h2 class="h2 reveal" data-i18n="faq.title"></h2>
+  <div class="wrap faq-wrap">
+    <div class="faq-head">
+      <p class="eyebrow" data-i18n="faq.eyebrow"></p>
+      <h2 class="h2" data-i18n="faq.title"></h2>
+    </div>
     <div class="faq">
-      <div class="qa"><button type="button" aria-expanded="false"><span data-i18n="faq.q1"></span><i></i></button><div class="a"><p data-i18n="faq.a1"></p></div></div>
+      <div class="qa"><button type="button" aria-expanded="true"><span data-i18n="faq.q1"></span><i></i></button><div class="a" style="height:auto"><p data-i18n="faq.a1"></p></div></div>
       <div class="qa"><button type="button" aria-expanded="false"><span data-i18n="faq.q2"></span><i></i></button><div class="a"><p data-i18n="faq.a2"></p></div></div>
       <div class="qa"><button type="button" aria-expanded="false"><span data-i18n="faq.q3"></span><i></i></button><div class="a"><p data-i18n="faq.a3"></p></div></div>
       <div class="qa"><button type="button" aria-expanded="false"><span data-i18n="faq.q4"></span><i></i></button><div class="a"><p data-i18n="faq.a4"></p></div></div>
@@ -199,11 +334,15 @@
 <section class="section contact" id="contact">
   <div class="wrap contact-inner">
     <div class="contact-text">
-      <h2 class="h2 reveal" data-i18n="form.title"></h2>
-      <p class="sub reveal" data-i18n="form.sub"></p>
+      <h2 class="h2" data-i18n="form.title"></h2>
+      <p class="sub" data-i18n="form.sub"></p>
+      <ul class="contacts">
+        <li><span>Telegram</span><a href="#contact" data-ph="TG_LINK">&lt;&lt;TG_LINK&gt;&gt;</a></li>
+        <li><span>Email</span><a href="#contact" data-ph="EMAIL">&lt;&lt;EMAIL&gt;&gt;</a></li>
+      </ul>
       <div class="agent agent-side a-white" aria-hidden="true"></div>
     </div>
-    <form class="form reveal" id="lead-form" novalidate>
+    <form class="form" id="lead-form" novalidate>
       <div class="agent agent-peek a-yellow" aria-hidden="true"></div>
       <label><span data-i18n="form.name"></span><input name="name" type="text" autocomplete="name" required></label>
       <label><span data-i18n="form.contact"></span><input name="contact" type="text" autocomplete="off" required data-i18n-ph="form.contact_ph"></label>
@@ -231,9 +370,9 @@
 <footer class="footer">
   <div class="wrap foot">
     <a class="logo" href="#top">why<span>not</span>.ai</a>
-    <p data-i18n="foot.text"></p>
-    <p class="copy">© <span id="year"></span> whynot.ai</p>
+    <p><span data-i18n="foot.text"></span> © <span id="year"></span> whynot.ai</p>
   </div>
+  <p class="wrap trademarks" data-i18n="foot.tm"></p>
 </footer>
 
 <template id="agent-tpl">
@@ -259,6 +398,8 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="scene.js"></script>
 <script src="main.js"></script>
 </body>
 </html>
