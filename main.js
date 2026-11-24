@@ -56,9 +56,7 @@
       'feat.6t': 'Заявки власнику', 'feat.6': 'Кожне звернення потрапляє вам у Telegram та Google Таблицю.',
       'aud.title': 'Підходить будь-якому бізнесу, де клієнти пишуть',
       'aud.crew': 'Команда ШІ-агентів, яка не втомлюється',
-      'demo.title': 'Подивіться, як це виглядає', 'demo.sub': 'Оберіть сферу та подивіться, як ШІ-адміністратор спілкується з клієнтом.',
-      'demo.t1': 'Відповідає за секунди', 'demo.t2': 'Не вигадує зайвого й не ставить діагнози', 'demo.t3': 'Передає людині, коли потрібно',
-      'demo.online': 'онлайн',
+      'demo.title': 'Подивіться, як це працює',
       'price.title': 'Прозорі тарифи', 'price.sub': 'Остаточна вартість залежить від задач, ми одразу все озвучимо.',
       'price.from': 'від', 'price.mo': ' / міс', 'price.custom': 'Індивідуально', 'price.hot': 'Популярний', 'price.cta': 'Обрати',
       'price.p1': 'Старт', 'price.p1a': 'Один канал (Telegram або сайт)', 'price.p1b': 'Відповіді на питання', 'price.p1c': 'Заявки в таблицю',
@@ -77,34 +75,7 @@
       'biz.beauty': 'Салон краси / б\'юті', 'biz.auto': 'Автосервіс', 'biz.med': 'Клініка / медицина', 'biz.shop': 'Магазин / сервіс', 'biz.edu': 'Освіта / курси', 'biz.other': 'Інше',
       'foot.text': 'ШІ-автоматизація для малого бізнесу.',
       'meta.title': 'whynot.ai — каталог ШІ-агентів для бізнесу', 'meta.desc': 'whynot.ai підбирає і збирає систему ШІ-агентів під ваш бізнес. Флагман — ШІ-адміністратор: відповідає клієнтам 24/7, записує на послуги, передає заявки.',
-      'chips': ['Салони краси', 'Автосервіси', 'Стоматології', 'Барбершопи', 'Фітнес-студії', 'Клініки', 'Школи та курси', 'Юристи', 'Інтернет-магазини', 'Ремонт техніки', 'Турагентства', 'Фотостудії'],
-      'topic.beauty': 'Манікюр', 'topic.dental': 'Стоматологія', 'topic.auto': 'Автосервіс',
-      'chats': {
-        beauty: [
-          ['user', 'Добрий вечір! Скільки коштує манікюр із покриттям?'],
-          ['bot', 'Вітаю! Орієнтовно 600–800 грн, залежно від дизайну. Остаточну ціну назве майстер.'],
-          ['user', 'А на завтра є вільний час?'],
-          ['bot', 'Так! Завтра є 11:00, 14:30 та 17:00. Який зручний?'],
-          ['user', '14:30'],
-          ['bot', 'Готово! Ви записані на завтра о 14:30 ✅ Надішлю нагадування за годину.']
-        ],
-        dental: [
-          ['user', 'Доброго дня! Скільки коштує професійна чистка зубів?'],
-          ['bot', 'Вітаю! Орієнтовно 1200–1800 грн, залежно від складності. Точну суму назве лікар на огляді.'],
-          ['user', 'Ще болить зуб другий день. Можна сьогодні?'],
-          ['bot', 'Розумію. Я не ставлю діагнози, але можу записати на терміновий огляд. Є сьогодні 16:40.'],
-          ['user', 'Так, на 16:40'],
-          ['bot', 'Готово! Ви записані на сьогодні о 16:40 ✅ Адміністратор клініки вже отримав заявку.']
-        ],
-        auto: [
-          ['user', 'Добрий день! Скільки коштує заміна масла і фільтра?'],
-          ['bot', 'Вітаю! Орієнтовно 900–1500 грн з роботою, залежно від авто та масла. Точну суму назве майстер.'],
-          ['user', 'А на суботу можна записатись?'],
-          ['bot', 'Так! У суботу є 10:00, 12:30 та 15:00. Яка марка авто?'],
-          ['user', 'Skoda Octavia, 12:30'],
-          ['bot', 'Готово: субота, 12:30, Skoda Octavia ✅ Нагадаю про наступну заміну масла через 10 000 км.']
-        ]
-      }
+      'chips': ['Салони краси', 'Автосервіси', 'Стоматології', 'Барбершопи', 'Фітнес-студії', 'Клініки', 'Школи та курси', 'Юристи', 'Інтернет-магазини', 'Ремонт техніки', 'Турагентства', 'Фотостудії']
     },
     en: {
       'nav.how': 'How it works', 'nav.features': 'Features', 'nav.pricing': 'Pricing', 'nav.faq': 'FAQ', 'nav.cta': 'Get started',
@@ -156,9 +127,7 @@
       'feat.6t': 'Leads to the owner', 'feat.6': 'Every inquiry arrives in your Telegram and Google Sheet.',
       'aud.title': 'Fits any business where customers write',
       'aud.crew': 'A team of AI agents that never gets tired',
-      'demo.title': 'See how it looks', 'demo.sub': 'Pick an industry and see how the AI receptionist talks to a customer.',
-      'demo.t1': 'Replies in seconds', 'demo.t2': 'Does not invent facts or diagnose', 'demo.t3': 'Hands over to a human when needed',
-      'demo.online': 'online',
+      'demo.title': 'See how it works',
       'price.title': 'Simple pricing', 'price.sub': 'Final cost depends on your needs, and we tell you upfront.',
       'price.from': 'from', 'price.mo': ' / mo', 'price.custom': 'Custom', 'price.hot': 'Popular', 'price.cta': 'Choose',
       'price.p1': 'Start', 'price.p1a': 'One channel (Telegram or site)', 'price.p1b': 'Answers to questions', 'price.p1c': 'Leads to a spreadsheet',
@@ -178,33 +147,6 @@
       'foot.text': 'AI automation for small business.',
       'meta.title': 'whynot.ai — AI agent catalog for business', 'meta.desc': 'whynot.ai picks and builds a system of AI agents for your business. The flagship is the AI receptionist: answers customers 24/7, books appointments, sends leads.',
       'chips': ['Beauty salons', 'Auto services', 'Dental clinics', 'Barbershops', 'Fitness studios', 'Clinics', 'Schools & courses', 'Law firms', 'Online stores', 'Repair shops', 'Travel agencies', 'Photo studios'],
-      'topic.beauty': 'Manicure', 'topic.dental': 'Dental', 'topic.auto': 'Auto service',
-      'chats': {
-        beauty: [
-          ['user', 'Good evening! How much is a manicure with gel polish?'],
-          ['bot', 'Hi! Roughly 600–800 UAH depending on design. The master will confirm the final price.'],
-          ['user', 'Any free slots tomorrow?'],
-          ['bot', 'Yes! Tomorrow at 11:00, 14:30 and 17:00. Which works for you?'],
-          ['user', '14:30'],
-          ['bot', 'Done! You are booked for tomorrow at 14:30 ✅ I will send a reminder an hour before.']
-        ],
-        dental: [
-          ['user', 'Hello! How much is a professional teeth cleaning?'],
-          ['bot', 'Hi! Roughly 1200–1800 UAH depending on complexity. The dentist will confirm the exact amount at the check-up.'],
-          ['user', 'My tooth has been aching for two days. Can I come today?'],
-          ['bot', 'I understand. I do not diagnose, but I can book an urgent check-up. There is a slot today at 16:40.'],
-          ['user', 'Yes, 16:40'],
-          ['bot', 'Done! You are booked for today at 16:40 ✅ The clinic administrator has already received your request.']
-        ],
-        auto: [
-          ['user', 'Hello! How much is an oil and filter change?'],
-          ['bot', 'Hi! Roughly 900–1500 UAH including labor, depending on the car and the oil. The mechanic will confirm the exact amount.'],
-          ['user', 'Can I book for Saturday?'],
-          ['bot', 'Yes! On Saturday we have 10:00, 12:30 and 15:00. What is your car model?'],
-          ['user', 'Skoda Octavia, 12:30'],
-          ['bot', 'Done: Saturday, 12:30, Skoda Octavia ✅ I will remind you about the next oil change in 10,000 km.']
-        ]
-      }
     }
   };
 
@@ -233,7 +175,7 @@
     setMeta('meta[property="og:locale"]', lang === 'uk' ? 'uk_UA' : 'en_US');
     renderChips();
     renderStatement();
-    restartChat();
+    if (window.WNDemo) WNDemo.setLang(lang);
     restartHeroChat();
     if (window.ScrollTrigger) ScrollTrigger.refresh();
   }
@@ -280,60 +222,7 @@
   }
   function gsap_clear(items) { if (window.gsap) gsap.set(items, { clearProps: 'opacity,visibility,transform' }); }
 
-  /* ---------- chat demo ---------- */
-  const chat = $('#chat');
-  let chatTimer = null, chatActive = false, chatInView = false, reduce = false;
-  let topic = 'beauty';
-
-  function initTopics() {
-    const tabs = $$('.chat-tabs button');
-    tabs.forEach(b => b.addEventListener('click', () => {
-      topic = b.dataset.topic;
-      tabs.forEach(o => {
-        const on = o === b;
-        o.classList.toggle('is-active', on);
-        o.setAttribute('aria-selected', String(on));
-      });
-      chatInView = true;
-      playChat();
-    }));
-  }
-
-  function bubble(role, text) {
-    const d = document.createElement('div');
-    d.className = 'msg ' + role;
-    d.textContent = text;
-    chat.appendChild(d);
-    while (chat.children.length > 6) chat.removeChild(chat.firstChild);
-    return d;
-  }
-  function stopChat() {
-    if (chatTimer) { chatTimer.kill(); chatTimer = null; }
-    chat.innerHTML = '';
-  }
-  function playChat() {
-    stopChat();
-    const msgs = t('chats')[topic];
-    if (reduce || !window.gsap) { msgs.forEach(([r, x]) => bubble(r, x)); return; }
-    const tl = gsap.timeline({ repeat: -1, repeatDelay: 3, onRepeat: () => { chat.innerHTML = ''; } });
-    msgs.forEach(([role, text]) => {
-      if (role === 'bot') {
-        tl.add(() => {
-          const ty = document.createElement('div');
-          ty.className = 'typing'; ty.innerHTML = '<i></i><i></i><i></i>';
-          ty.id = 'typing'; chat.appendChild(ty);
-        }, '+=0.3');
-        tl.add(() => { const ty = $('#typing'); if (ty) ty.remove(); popIn(bubble('bot', text)); }, '+=1.1');
-      } else {
-        tl.add(() => popIn(bubble('user', text)), '+=0.9');
-      }
-    });
-    chatTimer = tl;
-  }
-  function popIn(el) {
-    gsap.from(el, { y: 14, autoAlpha: 0, scale: .96, duration: .35, ease: 'back.out(1.6)' });
-  }
-  function restartChat() { if (chatInView || reduce || !window.gsap) playChat(); }
+  let reduce = false;
 
   /* ---------- FAQ ---------- */
   function initFaq() {
@@ -396,7 +285,6 @@
         gsap.set('[data-anim]', { clearProps: 'opacity,visibility,transform' });
         $$('.step').forEach(s => s.classList.add('is-on'));
         $('.steps-fill').style.transform = 'scaleY(1)';
-        playChat();
         return;
       }
 
@@ -437,8 +325,6 @@
         });
         $('.hero').addEventListener('pointerleave', () => { rx(0); ry(0); });
       }
-      gsap.fromTo('.phone', { rotationX: 24, rotationY: -14, y: 50, transformPerspective: 900, transformOrigin: '50% 100%' },
-        { rotationX: 0, rotationY: 0, y: 0, ease: 'none', scrollTrigger: { trigger: '#demo', start: 'top 85%', end: 'top 25%', scrub: true } });
       gsap.fromTo('.bento .bviz', { rotationX: 18, transformPerspective: 800, transformOrigin: '50% 100%' },
         { rotationX: 0, ease: 'none', stagger: .04, scrollTrigger: { trigger: '.bento', start: 'top 85%', end: 'top 35%', scrub: true } });
 
@@ -503,15 +389,6 @@
         });
       });
 
-      // chat starts when visible
-      ScrollTrigger.create({
-        trigger: '#demo', start: 'top 70%', end: 'bottom 10%',
-        onEnter: () => { chatInView = true; playChat(); },
-        onEnterBack: () => { chatInView = true; if (!chatTimer) playChat(); },
-        onLeave: () => { chatInView = false; if (chatTimer) chatTimer.pause(); },
-        onLeaveBack: () => { chatInView = false; if (chatTimer) chatTimer.pause(); }
-      });
-
       return () => { reduce = false; };
     });
   }
@@ -528,7 +405,7 @@
     reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     initFaq();
     initForm();
-    initTopics();
+    if (window.WNDemo) WNDemo.init();
     // cursor-follow glow on cards
     document.addEventListener('pointermove', e => {
       const el = e.target.closest && e.target.closest('.bcard');
@@ -548,8 +425,6 @@
     if (window.gsap && window.ScrollTrigger) {
       window.addEventListener('load', () => ScrollTrigger.refresh());
       if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => ScrollTrigger.refresh());
-    } else {
-      playChat();
     }
   }
   boot();

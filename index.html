@@ -255,30 +255,12 @@
   </div>
 </section>
 
-<!-- DEMO CHAT -->
+<!-- DEMO -->
 <section class="section" id="demo">
-  <div class="wrap demo">
-    <div class="demo-text">
-      <p class="eyebrow" data-i18n="demo.eyebrow"></p>
-      <h2 class="h2" data-i18n="demo.title"></h2>
-      <p class="sub" data-i18n="demo.sub"></p>
-      <ul class="ticks">
-        <li data-i18n="demo.t1"></li>
-        <li data-i18n="demo.t2"></li>
-        <li data-i18n="demo.t3"></li>
-      </ul>
-    </div>
-    <div class="demo-chat">
-      <div class="chat-tabs" role="tablist" aria-label="Industry">
-        <button type="button" role="tab" aria-selected="true" class="is-active" data-topic="beauty" data-i18n="topic.beauty"></button>
-        <button type="button" role="tab" aria-selected="false" data-topic="dental" data-i18n="topic.dental"></button>
-        <button type="button" role="tab" aria-selected="false" data-topic="auto" data-i18n="topic.auto"></button>
-      </div>
-      <div class="phone" aria-label="Chat demo">
-        <div class="phone-top"><div class="av">AI</div><div><b>whynot.ai</b><small data-i18n="demo.online"></small></div></div>
-        <div class="chat" id="chat" aria-live="polite"></div>
-      </div>
-    </div>
+  <div class="wrap dm">
+    <p class="eyebrow" data-i18n="demo.eyebrow"></p>
+    <h2 class="h2" data-i18n="demo.title"></h2>
+    <div id="demo-app" class="dm-app"></div>
   </div>
 </section>
 
@@ -337,8 +319,8 @@
       <h2 class="h2" data-i18n="form.title"></h2>
       <p class="sub" data-i18n="form.sub"></p>
       <ul class="contacts">
-        <li><span>Telegram</span><a href="#contact" data-ph="TG_LINK">&lt;&lt;TG_LINK&gt;&gt;</a></li>
-        <li><span>Email</span><a href="#contact" data-ph="EMAIL">&lt;&lt;EMAIL&gt;&gt;</a></li>
+        <li><span>Telegram</span><a href="https://t.me/ai_whynot_bot" target="_blank" rel="noopener">@ai_whynot_bot</a></li>
+        <li><span>Email</span><a href="mailto:whynotaigg@gmail.com">whynotaigg@gmail.com</a></li>
       </ul>
       <div class="agent agent-side a-white" aria-hidden="true"></div>
     </div>
@@ -400,6 +382,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="scene.js"></script>
+<script src="demo.js"></script>
 <script src="main.js"></script>
 </body>
 </html>
